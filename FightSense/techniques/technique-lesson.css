@@ -1,0 +1,46 @@
+.lesson-page { padding-top: 35px; }
+.lesson-back { display: inline-block; margin-bottom: 26px; color: #9aa5ab; font-size: 13px; font-weight: 700; text-decoration: none; }
+.lesson-back:hover, .lesson-footer p a:hover { color: #e2ad58; }
+.lesson-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+.lesson-kicker, .lesson-meta-label { display: block; color: #e2ad58; font-size: 11px; font-weight: 900; letter-spacing: 1.7px; }
+.lesson-heading h1 { margin-top: 8px; font-size: clamp(42px, 7vw, 84px); font-style: italic; font-weight: 900; line-height: .95; letter-spacing: -2px; }
+.lesson-tagline { margin-top: 12px; color: #fff; font-size: 20px; font-weight: 700; }
+.lesson-count { color: rgba(226, 173, 88, .2); font-size: 52px; font-weight: 900; white-space: nowrap; }
+.lesson-intro { margin: 18px 0 30px; max-width: 650px; color: #98a4ab; font-size: 15px; line-height: 1.6; }
+.lesson-layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(290px, 1fr); gap: 18px; align-items: stretch; }
+.lesson-video-card, .lesson-notes { border: 1px solid rgba(255, 255, 255, .1); border-radius: 9px; background: #071016; overflow: hidden; }
+.lesson-video { position: relative; aspect-ratio: 16 / 9; background: #020608; }
+.lesson-video iframe { display: none; width: 100%; height: 100%; border: 0; }
+.lesson-video.is-embedded iframe { display: block; }
+.lesson-video.is-embedded .lesson-video-fallback { display: none; }
+.lesson-video-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; padding: 20px 22px; }
+.lesson-video-meta h2 { margin-top: 7px; font-size: 18px; }
+.lesson-video-meta p { margin-top: 6px; color: #9aa5ab; font-size: 13px; }
+.watch-link, .next-lesson { display: inline-flex; align-items: center; justify-content: center; min-height: 41px; padding: 0 16px; border-radius: 5px; background: #dfb16b; color: #090c0e; font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.watch-link:hover, .next-lesson:hover { background: #edc27c; color: #090c0e; }
+.lesson-notes { padding: 24px; background: linear-gradient(145deg, rgba(226, 173, 88, .09), transparent 40%), #071016; }
+.lesson-notes h2 { margin-top: 12px; font-size: 25px; font-weight: 900; font-style: italic; }
+.lesson-notes ol { margin: 25px 0 0 20px; padding: 0; color: #c9d0d4; font-size: 15px; line-height: 1.6; }
+.lesson-notes li { padding-left: 7px; margin-bottom: 16px; }
+.lesson-notes li::marker { color: #e2ad58; font-weight: 900; }
+.lesson-mistake { margin-top: 27px; padding: 18px; border-left: 3px solid #e8323b; background: rgba(232, 50, 59, .07); }
+.lesson-mistake .lesson-meta-label { color: #f36569; }
+.lesson-mistake p { margin-top: 8px; color: #bfc8cc; font-size: 14px; line-height: 1.5; }
+.lesson-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 20px; }
+.lesson-footer p { max-width: 700px; color: #87939a; font-size: 12px; line-height: 1.55; }
+.lesson-footer p a { color: #d7b477; }
+@media (max-width: 800px) { .lesson-layout { grid-template-columns: 1fr; } .lesson-count { font-size: 38px; } }
+@media (max-width: 560px) { .lesson-heading h1 { font-size: 47px; } .lesson-count { display: none; } .lesson-tagline { font-size: 17px; } .lesson-footer { align-items: flex-start; flex-direction: column; } .lesson-video-meta { padding: 16px; } .lesson-notes { padding: 20px; } }
+
+
+
+.lesson-video-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(20px, 5vw, 46px); background: radial-gradient(circle at 76% 40%, rgba(226, 173, 88, .16), transparent 43%), linear-gradient(135deg, #0c1820, #03080c); }
+.video-play-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border-radius: 50%; background: #e8323b; color: #fff; font-size: 22px; }
+.lesson-video-fallback h2 { margin-top: 10px; font-size: clamp(22px, 3vw, 34px); font-weight: 900; font-style: italic; }
+.lesson-video-fallback p { margin: 8px 0 20px; color: #9aa5ab; font-size: 14px; line-height: 1.5; }
+
+
+.lesson-video-meta .watch-link { display: none; }
+.lesson-video.is-embedded + .lesson-video-meta .watch-link { display: inline-flex; }
+
+

@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 0%, #101820 0%, #071017 35%, #03080c 78%);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+.navbar {
+    height: 72px;
+    padding: 0 52px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    background: #030b0f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    justify-self: start;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #e2ad58;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-links a {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #a3a9ad;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links a.active {
+    color: #e2ad58;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    height: 2px;
+    background: #e2ad58;
+}
+
+.start-training-btn {
+    justify-self: end;
+
+    height: 44px;
+
+    padding: 0 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    background: #dfb16b;
+
+    color: #090c0e;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.2s;
+}
+
+
+.start-training-btn:hover {
+    background: #ebbe79;
+    transform: translateY(-1px);
+}
+
+.technique-page {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 30px 0 55px;
+}
+
+.library-heading {
+    margin-bottom: 18px;
+}
+
+.library-heading h1 {
+    font-size: 38px;
+    line-height: 1;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+.library-heading p {
+    max-width: 600px;
+    margin-top: 8px;
+    color: #89949b;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.technique-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.technique-card {
+    min-width: 0;
+    overflow: hidden;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 5px;
+    background: #071016;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.technique-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(226, 173, 88, 0.55);
+}
+
+.jab-card {
+    border-color: rgba(239, 54, 62, 0.75);
+}
+
+.technique-image {
+    height: 145px;
+    position: relative;
+    overflow: hidden;
+    background: #09131a;
+}
+
+.technique-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(7, 16, 22, 0.25) 65%,
+        #071016 100%
+    );
+}
+
+.jab-card .technique-image {
+    background: url("assets/images/jab-technique.png") center / cover no-repeat;
+}
+
+.cross-card .technique-image {
+    background: url("assets/images/cross-technique.png") center / cover no-repeat;
+}
+
+.guard-card .technique-image {
+    background: url("assets/images/guard-technique.png") center / cover no-repeat;
+}
+
+.slip-card .technique-image {
+    background: url("assets/images/slip-technique.png") center / cover no-repeat;
+}
+
+.duck-card .technique-image {
+    background: url("assets/images/duck-technique.png") center / cover no-repeat;
+}
+
+
+
+
+.technique-info {
+    padding: 12px 12px 14px;
+}
+
+.technique-info h2 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.technique-info p {
+    margin-top: 5px;
+    color: #7d888f;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.combinations {
+    margin-top: 30px;
+}
+
+.combinations > h2 {
+    margin-bottom: 13px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.combination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.combo-card {
+    min-height: 180px;
+    padding: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 5px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.02), transparent),
+        #071016;
+    transition: 0.2s;
+}
+
+.combo-card:hover {
+    border-color: rgba(226, 173, 88, 0.45);
+    transform: translateY(-2px);
+}
+
+.combo-heading h3 {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.combo-heading span {
+    display: block;
+    margin-top: 3px;
+    color: #79848b;
+    font-size: 8px;
+}
+
+.combo-visual {
+    height: 120px;
+    margin-top: 12px;
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.combo-card:nth-child(1) .combo-visual {
+    background-image: url("assets/images/combo-1-2.png");
+}
+
+.combo-card:nth-child(2) .combo-visual {
+    background-image: url("assets/images/combo-1-2-slip-v2.png");
+}
+
+.combo-card:nth-child(3) .combo-visual {
+    background-image: url("assets/images/combo-1-2-duck-v2.png");
+}
+
+.combo-card:nth-child(4) .combo-visual {
+    background-image: url("assets/images/combo-defensive-v2.png");
+}
+
+
+.practice-banner {
+    background-color: #061017;
+    background-image:
+        linear-gradient(90deg, #061017 0%, rgba(6, 16, 23, 0.98) 42%, transparent 68%),
+        url("assets/images/practice-banner.png");
+    background-position: center, right 10%;
+    background-size: 100% 100%, auto 140%;
+    background-repeat: no-repeat;
+}
+
+.practice-content {
+    width: 56%;
+    position: relative;
+    z-index: 3;
+    padding: 30px 35px;
+}
+
+.practice-content h2 {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.practice-content p {
+    margin-top: 8px;
+    max-width: 480px;
+    color: #8b969c;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.practice-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    height: 36px;
+    padding: 0 17px;
+    border-radius: 4px;
+    background: #e8323b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.practice-button:hover {
+    background: #f13c45;
+    transform: translateY(-1px);
+}
+
+
+
+@media (max-width: 1050px) {
+    .navbar {
+        padding: 0 24px;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .technique-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .combination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        height: auto;
+        padding: 13px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .start-training-btn {
+        margin-left: auto;
+        height: 36px;
+        padding: 0 14px;
+        font-size: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        order: 3;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        height: 35px;
+        font-size: 10px;
+    }
+
+    .nav-links a.active::after {
+        bottom: 0;
+    }
+
+    .technique-page {
+        width: calc(100% - 28px);
+        padding-top: 22px;
+    }
+
+    .library-heading h1 {
+        font-size: 30px;
+    }
+
+    .technique-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .combination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-content {
+        width: 75%;
+        padding: 25px 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .technique-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technique-image {
+        height: 170px;
+    }
+
+    .practice-content {
+        width: 100%;
+    }
+
+}

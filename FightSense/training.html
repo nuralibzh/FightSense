@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FightSense | Training</title>
+    <link rel="stylesheet" href="training.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+    <a href="index.html" class="logo">
+        <span class="logo-fight">FIGHT</span><span class="logo-sense">SENSE</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="training.html" class="active">TRAINING</a>
+        <a href="technique.html">TECHNIQUE</a>
+        <a href="about.html">ABOUT</a>
+    </nav>
+
+    <a href="#chooseLevel" class="start-training-btn">
+        Start Training →
+    </a>
+</header>
+
+
+    <main class="training-selection" id="levelSelection">
+
+        <section class="training-hero">
+            <div class="hero-content">
+                <h1>TRAINING</h1>
+                <h2>Turn knowledge into action.</h2>
+
+                <p>
+                    Follow real boxing training sessions with movement tracking.
+                    Choose your level, allow camera access and get instant feedback
+                    on your technique.
+                </p>
+            </div>
+
+            <div class="hero-fighter"></div>
+        </section>
+
+
+        <section class="how-training">
+            <h2 class="section-title">HOW TRAINING WORKS</h2>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-top">
+                        <span class="step-number">1</span>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <h3>Choose<br>your level</h3>
+                    <p>Select a difficulty level that matches your experience.</p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-top">
+                        <span class="step-number">2</span>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <h3>Allow<br>camera access</h3>
+                    <p>Give access to your webcam to track your movements.</p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-top">
+                        <span class="step-number">3</span>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <h3>Follow<br>the commands</h3>
+                    <p>Perform the movements shown during the workout.</p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-top">
+                        <span class="step-number">4</span>
+                        <div class="step-line"></div>
+                    </div>
+
+                    <h3>Get feedback</h3>
+                    <p>Receive feedback and corrections on your technique.</p>
+                </div>
+
+
+                <div class="step">
+                    <div class="step-top">
+                        <span class="step-number">5</span>
+                    </div>
+
+                    <h3>See your results</h3>
+                    <p>Check your score, accuracy and results after each session.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="boxing-help">
+            <div class="boxing-help-image"></div>
+
+            <div class="boxing-help-content">
+                <h2>NEW TO BOXING?</h2>
+
+                <p>
+                    Before starting your first training session, we recommend
+                    learning the correct technique for each movement.
+                </p>
+
+                <a href="technique.html" class="technique-button">
+                    Open Technique Library →
+                </a>
+            </div>
+        </section>
+
+
+        <section class="choose-level" id="chooseLevel">
+            <h2 class="section-title">CHOOSE YOUR LEVEL</h2>
+
+            <p class="section-description">
+                Each level is designed to match your experience and help you improve step by step.
+            </p>
+            <p class="start-status" id="startStatus" role="status" aria-live="polite"></p>
+
+            <div class="level-grid">
+
+                <div class="level-card beginner-card">
+                    <div class="level-image beginner-image"></div>
+
+                    <div class="level-content">
+                        <h2>Beginner</h2>
+
+                        <ul>
+                            <li>Jab, Cross, Guard</li>
+                            <li>Slower speed</li>
+                            <li>More reaction time</li>
+                            <li>Focus on technique</li>
+                        </ul>
+
+                        <button class="level-button beginner-button" data-level="Beginner">
+                            Start Beginner
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="level-card amateur-card">
+                    <span class="recommended">Recommended</span>
+
+                    <div class="level-image amateur-image"></div>
+
+                    <div class="level-content">
+                        <h2>Amateur</h2>
+
+                        <ul>
+                            <li>Jab, Cross, Guard, Slip</li>
+                            <li>Faster speed</li>
+                            <li>Combination practice</li>
+                            <li>Balanced difficulty</li>
+                        </ul>
+
+                        <button class="level-button amateur-button" data-level="Amateur">
+                            Start Amateur
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="level-card pro-card">
+                    <div class="level-image pro-image"></div>
+
+                    <div class="level-content">
+                        <h2>Pro</h2>
+
+                        <ul>
+                            <li>All movements</li>
+                            <li>High speed</li>
+                            <li>Complex combinations</li>
+                            <li>For experienced users</li>
+                        </ul>
+
+                        <button class="level-button pro-button" data-level="Pro">
+                            Start Pro
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <main class="training-page" id="activeTraining" hidden>
+
+        <section class="camera-section">
+
+            <div class="camera-wrapper">
+
+                <video id="webcam" autoplay playsinline muted></video>
+
+                <canvas id="poseCanvas"></canvas>
+
+                <span class="camera-corner top-left"></span>
+                <span class="camera-corner top-right"></span>
+                <span class="camera-corner bottom-left"></span>
+                <span class="camera-corner bottom-right"></span>
+
+                <div class="webcam-status">
+                    <span class="status-dot"></span>
+                    <span id="webcamStatusText">Starting camera...</span>
+                </div>
+
+            </div>
+
+
+            <div class="feedback-box" id="feedbackBox">
+
+                <div class="feedback-header">
+                    <span class="feedback-icon">!</span>
+                    <span>FORM FEEDBACK</span>
+                </div>
+
+                <p id="feedbackText">
+                    Stand where your head, shoulders and hands are visible.
+                </p>
+
+            </div>
+
+            <div class="correction-notes" id="correctionNotes" hidden>
+                <h3>COACH NOTES <span>Saved until the end of this session</span></h3>
+                <ul id="correctionList"></ul>
+            </div>
+
+        </section>
+
+
+        <aside class="training-panel">
+
+            <div class="move-header">
+
+                <div class="current-move">
+                    <p class="panel-label">CURRENT MOVE</p>
+                    <h1 id="currentMove">READY</h1>
+                </div>
+
+                <div class="timer" id="timer">
+                    <span id="timerValue">0:00</span>
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+            <div class="stat">
+                <div class="stat-header">
+                    <span>Score</span>
+                    <span id="scoreValue">0</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill score-fill" id="scoreBar"></div>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-header">
+                    <span>Combo</span>
+                    <span id="comboValue">x0</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill combo-fill" id="comboBar"></div>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-header">
+                    <span>Accuracy</span>
+                    <span id="accuracyValue">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill accuracy-fill" id="accuracyBar"></div>
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-header">
+                    <span>Reaction Time</span>
+                    <span id="reactionValue">—</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill reaction-fill" id="reactionBar"></div>
+                </div>
+            </div>
+
+
+            <div class="next-move" id="nextMoveBox">
+                <div>
+                    <span class="next-label">Next:</span>
+                    <strong id="nextMove">JAB</strong>
+                </div>
+
+                <span class="next-arrow">→</span>
+            </div>
+
+            <button class="end-session-button" id="endSession" type="button">End session</button>
+
+        </aside>
+
+    </main>
+
+
+    <section class="training-info" id="trainingInfo" hidden>
+
+        <div class="info-item">
+            <span>LEVEL</span>
+            <strong id="trainingLevel">Beginner</strong>
+        </div>
+
+        <div class="info-item">
+            <span>ROUND</span>
+
+            <strong>
+                <span id="currentRound">1</span>
+                /
+                <span id="totalRounds">1</span>
+            </strong>
+        </div>
+
+        <div class="info-item">
+            <span>MOVES</span>
+
+            <strong>
+                <span id="completedMoves">0</span>
+                /
+                <span id="totalMoves">0</span>
+            </strong>
+        </div>
+
+    </section>
+
+    <section class="session-results" id="sessionResults" hidden aria-live="polite">
+        <p class="results-kicker">SESSION COMPLETE</p>
+        <h1>Nice work.</h1>
+        <p id="resultsMessage">Your training results are ready.</p>
+        <div class="results-grid">
+            <div><span>Score</span><strong id="resultScore">0</strong></div>
+            <div><span>Moves</span><strong id="resultMoves">0 / 0</strong></div>
+            <div><span>Accuracy</span><strong id="resultAccuracy">0%</strong></div>
+            <div><span>Best combo</span><strong id="resultCombo">0</strong></div>
+        </div>
+        <div class="result-corrections" id="resultCorrections" hidden>
+            <h2>Corrections to remember</h2>
+            <ul id="resultCorrectionList"></ul>
+        </div>
+        <button class="results-restart" id="restartTraining" type="button">Choose another level</button>
+    </section>
+
+<script src="training-camera.js"></script>
+
+</body>
+</html>
